@@ -30,10 +30,10 @@ const About = () => {
     ];
 
     const boardMembers = [
-        { name: 'Smt. Archana Shukla', role: 'Chairperson', desc: 'Providing strategic leadership and governance oversight.' },
-        { name: 'Shri Vijay Kumar Namdeo Ambade', role: 'Managing Director', desc: 'Overseeing daily operations and execution of statewide forestry projects.' },
-        { name: 'Shri Ashok Baranwal', role: 'Additional Chief Secretary (Forests)', desc: 'State Government Representative.' },
-        { name: 'Dr. R. K. Gupta', role: 'Principal Chief Conservator of Forests', desc: 'Technical and Ecological Advisor.' }
+        { name: 'Shri Sandeep Yadav, IAS', role: 'Chairman / Vice Chairman & ACS (Forest)', desc: 'Providing strategic leadership and governance oversight at the state level.' },
+        { name: 'Shri H.U. Khan, IFS', role: 'Managing Director', desc: 'Overseeing daily operations and execution of statewide forestry projects.' },
+        { name: 'Shri Shubhranjan Sen, IFS', role: 'Principal Chief Conservator of Forests & HoFF', desc: 'Technical and Ecological Advisor.' },
+        { name: 'Shri Atul Mishra, IFS', role: 'Secretary (Forest)', desc: 'State Government Representative from Mantralaya.' }
     ];
 
     return (
@@ -176,6 +176,64 @@ const About = () => {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </section>
+
+                    {/* Key Offices Section */}
+                    <section id="key-offices" className="scroll-mt-24">
+                        <div className="flex items-center justify-between mb-8 border-b-2 border-gold-300 pb-2">
+                            <h2 className="text-3xl font-bold text-olive-900">Key Offices</h2>
+                            <a href="/directory" className="hidden md:inline-flex items-center gap-2 text-sm font-bold text-olive-600 hover:text-gold-500 transition-colors">
+                                View Full Directory <i className="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div className="grid lg:grid-cols-3 gap-6">
+                            {/* Head Office */}
+                            <div className="bg-olive-800 text-beige-50 p-6 rounded-xl shadow-sm border border-olive-700 relative overflow-hidden">
+                                <div className="absolute -right-4 -top-4 opacity-10 text-7xl"><i className="fas fa-building"></i></div>
+                                <div className="mb-4">
+                                    <span className="bg-gold-500 text-olive-900 text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Headquarters</span>
+                                </div>
+                                <h3 className="font-bold text-xl mb-2 text-gold-300">Head Office, Bhopal</h3>
+                                <p className="text-sm text-beige-200 leading-relaxed mb-4">
+                                    Van Bhawan, Block-C, 1st Floor, Link Road No.-2,<br />
+                                    Tulsi Nagar, Bhopal-462003 (Madhya Pradesh)
+                                </p>
+                                <div className="text-sm font-medium">
+                                    <i className="fas fa-phone mr-2 text-gold-400"></i> 0755-2674204
+                                </div>
+                            </div>
+                            
+                            {/* Regional Bhopal */}
+                            <div className="bg-white text-olive-800 p-6 rounded-xl shadow-sm border border-beige-200 hover:border-gold-300 transition-colors">
+                                <div className="mb-4 text-olive-400 text-2xl"><i className="fas fa-map-marker-alt"></i></div>
+                                <h3 className="font-bold text-lg mb-2 text-olive-900">Regional General Manager, Bhopal</h3>
+                                <p className="text-sm text-olive-600 leading-relaxed mb-4">
+                                    O/o Regional Chief General Manager<br />
+                                    Vanita Nursery Parisar, Near Jawahar Bal Bhawan, Bhopal
+                                </p>
+                                <div className="text-sm font-medium">
+                                    <i className="fas fa-phone mr-2 text-olive-500"></i> 0755-2674298
+                                </div>
+                            </div>
+
+                            {/* Regional Jabalpur */}
+                            <div className="bg-white text-olive-800 p-6 rounded-xl shadow-sm border border-beige-200 hover:border-gold-300 transition-colors">
+                                <div className="mb-4 text-olive-400 text-2xl"><i className="fas fa-map-marker-alt"></i></div>
+                                <h3 className="font-bold text-lg mb-2 text-olive-900">Regional General Manager, Jabalpur</h3>
+                                <p className="text-sm text-olive-600 leading-relaxed mb-4">
+                                    O/o Regional Chief General Manager<br />
+                                    451, Sanjeevni Nagar, (Gadha) Jabalpur (M.P) 482001
+                                </p>
+                                <div className="text-sm font-medium">
+                                    <i className="fas fa-phone mr-2 text-olive-500"></i> 0761-4017345
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-6 text-center md:hidden">
+                            <a href="/directory" className="inline-flex items-center gap-2 text-sm font-bold text-olive-600 hover:text-gold-500 transition-colors">
+                                View Full Directory <i className="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </section>
 

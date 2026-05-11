@@ -8,11 +8,12 @@ export const navItems = [
             { path: '/about#about-us', label: 'Company Profile' },
             { path: '/about#company-objectives', label: 'Company Objectives' },
             { path: '/about#organisation-chart', label: 'Organisation Chart' },
-            { path: '/about#board-of-directors', label: 'Board of Directors' }
+            { path: '/about#board-of-directors', label: 'Board of Directors' },
+            { path: '/directory', label: 'Officers Directory' }
         ]
     },
     {
-        path: '#',
+        path: '/operations',
         label: 'Operations',
         icon: 'fas fa-tree',
         subItems: [
@@ -22,7 +23,7 @@ export const navItems = [
         ]
     },
     {
-        path: '#',
+        path: '/e-services',
         label: 'E-Services',
         icon: 'fas fa-laptop',
         subItems: [
@@ -78,9 +79,9 @@ export const notices = [
 export const companySnapshot = {
     name: 'Madhya Pradesh Rajya Van Vikas Nigam (MPRVVN)',
     tagline: 'Planting Prosperity, Growing Sustainability',
-    anniversary: '50 Years of Sustainable Growth | 1975-2025',
-    established: 'Incorporated in 1975; operations commenced on 1 Nov 1975.',
-    legal: 'State government company under the Companies Act framework.',
+    anniversary: '50 Years of Sustainable Growth | 1975–2025',
+    established: 'Constituted in 1975 under the Madhya Pradesh Van Vikas Nigam Adhiniyam, 1975.',
+    legal: 'A state government company operating under the applicable Companies Act framework.',
 };
 
 export const visionThemes = [

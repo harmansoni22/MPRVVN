@@ -12,30 +12,31 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-gradient-to-b from-green-900 to-green-950 text-white">
-            {/* Top section with CTA */}
-            <div className="border-b border-green-800/50">
-                <div className="container mx-auto px-4 py-8">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <footer className="bg-beige-100 text-stone-700 border-t-4 border-gold-400">
+
+            {/* ── Newsletter Strip ── */}
+            <div className="bg-beige-200 border-b border-beige-300">
+                <div className="container mx-auto px-6 py-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div>
-                            <h3 className="text-xl font-bold mb-1">Stay Updated with MPRVVN</h3>
-                            <p className="text-green-300/80 text-sm">Get updates on tenders, auctions, projects, and biodiversity initiatives.</p>
+                            <h3 className="text-base font-bold text-stone-800">Stay Updated with MPRVVN</h3>
+                            <p className="text-sm text-stone-500 mt-0.5">Get updates on tenders, auctions, projects, and forest initiatives.</p>
                         </div>
                         {subscribed ? (
-                            <div className="bg-green-800/50 text-green-300 px-6 py-3 rounded-lg text-sm font-medium">
-                                <i className="fas fa-check-circle mr-2"></i>Thank you for subscribing!
+                            <div className="flex items-center gap-2 bg-olive-100 border border-olive-300 text-olive-700 px-5 py-2.5 rounded-lg text-sm font-semibold">
+                                <i className="fas fa-check-circle text-olive-500"></i> Thank you for subscribing!
                             </div>
                         ) : (
-                            <form onSubmit={handleSubscribe} className="flex gap-2 w-full md:w-auto">
+                            <form onSubmit={handleSubscribe} className="flex gap-2 w-full sm:w-auto">
                                 <input
                                     type="email"
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
-                                    placeholder="Enter your email"
+                                    placeholder="Your email address"
                                     required
-                                    className="bg-white/10 border border-green-700/50 rounded-lg px-4 py-2.5 text-sm text-white placeholder-green-300/50 focus:outline-none focus:border-green-500 w-full md:w-64"
+                                    className="bg-white border border-beige-300 rounded-lg px-4 py-2.5 text-sm text-stone-700 placeholder-stone-400 focus:outline-none focus:border-gold-400 w-full sm:w-64 transition-colors shadow-sm"
                                 />
-                                <button type="submit" className="bg-green-600 hover:bg-green-500 px-5 py-2.5 rounded-lg text-sm font-semibold transition whitespace-nowrap">
+                                <button type="submit" className="bg-gold-500 hover:bg-gold-400 text-stone-900 font-bold px-5 py-2.5 rounded-lg text-sm transition-colors whitespace-nowrap shadow-sm">
                                     Subscribe
                                 </button>
                             </form>
@@ -44,75 +45,113 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Main footer content */}
-            <div className="container mx-auto px-4 py-10">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* About */}
+            {/* ── Main Footer Grid ── */}
+            <div className="container mx-auto px-6 py-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                    {/* Column 1: About */}
                     <div>
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                                <i className="fas fa-tree text-green-300"></i>
+                        <div className="flex items-center gap-3 mb-5">
+                            <div className="w-11 h-11 bg-white border border-beige-300 rounded-xl flex items-center justify-center shadow-sm">
+                                <i className="fas fa-tree text-olive-600 text-lg"></i>
                             </div>
-                            <h3 className="text-lg font-bold">MPFSDC</h3>
+                            <div>
+                                <h3 className="text-base font-extrabold text-stone-800 leading-tight">MPRVVN</h3>
+                                <p className="text-[10px] text-stone-400 uppercase tracking-wider font-semibold">Bhopal, M.P.</p>
+                            </div>
                         </div>
-                        <p className="text-green-300/80 text-sm leading-relaxed mb-4">{companySnapshot.established}</p>
-                        <div className="text-sm text-green-400/70">
-                            <p><i className="fas fa-building-columns mr-2"></i>Government of Madhya Pradesh Enterprise</p>
-                            <p><i className="fas fa-scale-balanced mr-2"></i>{companySnapshot.legal}</p>
+                        <p className="text-sm text-stone-600 leading-relaxed mb-5">{companySnapshot.established}</p>
+                        <div className="space-y-2 text-sm text-stone-500">
+                            <div className="flex items-center gap-2">
+                                <i className="fas fa-building-columns text-gold-500 w-4 text-center text-xs"></i>
+                                <span>Government of Madhya Pradesh</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <i className="fas fa-scale-balanced text-gold-500 w-4 text-center text-xs"></i>
+                                <span>{companySnapshot.legal}</span>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Column 2: Quick Links */}
                     <div>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-green-400 mb-4">Quick Links</h4>
-                        <ul className="space-y-2.5 text-green-300/90 text-sm">
-                            <li><Link to="/" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Home</Link></li>
-                            <li><Link to="/about" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>About</Link></li>
-                            <li><Link to="/services" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Services</Link></li>
-                            <li><Link to="/projects" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Projects</Link></li>
-                            <li><Link to="/auctions" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Auctions</Link></li>
-                            <li><Link to="/contact" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Contact</Link></li>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5 pb-2 border-b border-beige-300">Quick Links</h4>
+                        <ul className="space-y-3">
+                            {[
+                                { to: '/', label: 'Home', icon: 'fa-home' },
+                                { to: '/about', label: 'About MPRVVN', icon: 'fa-info-circle' },
+                                { to: '/services', label: 'Our Services', icon: 'fa-cogs' },
+                                { to: '/projects', label: 'Projects', icon: 'fa-project-diagram' },
+                                { to: '/gallery', label: 'Photo Gallery', icon: 'fa-images' },
+                                { to: '/contact', label: 'Contact Us', icon: 'fa-envelope' },
+                            ].map(item => (
+                                <li key={item.to}>
+                                    <Link to={item.to} className="flex items-center gap-3 text-sm text-stone-600 hover:text-stone-900 transition-colors group">
+                                        <i className={`fas ${item.icon} text-gold-500 group-hover:text-gold-600 transition-colors w-4 text-center text-xs`}></i>
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Important Links */}
+                    {/* Column 3: E-Services */}
                     <div>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-green-400 mb-4">Important Links</h4>
-                        <ul className="space-y-2.5 text-green-300/90 text-sm">
-                            <li><Link to="/downloads" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Acts, Rules, Circulars</Link></li>
-                            <li><Link to="/tenders" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Tender Notices</Link></li>
-                            <li><Link to="/auctions" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Current Auctions</Link></li>
-                            <li><Link to="/downloads" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Annual Reports</Link></li>
-                            <li><Link to="/contact" className="hover:text-white transition flex items-center gap-2"><i className="fas fa-chevron-right text-[10px] text-green-500"></i>Grievance Support</Link></li>
+                        <div className="flex items-center justify-between gap-3 mb-5">
+                            <h4 className="text-xs font-bold uppercase tracking-widest text-stone-400">E-Services</h4>
+                            <Link to="/e-services" className="text-xs font-bold text-gold-600 hover:text-gold-700 transition-colors hidden sm:inline-flex items-center gap-2">
+                                View all <i className="fas fa-arrow-right" />
+                            </Link>
+                        </div>
+                        <ul className="space-y-3">
+                            {[
+                                { to: '/e-services', label: 'E-Services Landing', icon: 'fa-laptop' },
+                                { to: '/tenders', label: 'Tender Notices', icon: 'fa-file-alt' },
+                                { to: '/auctions', label: 'E-Auction Portal', icon: 'fa-gavel' },
+                                { to: '/downloads', label: 'Acts & Circulars', icon: 'fa-download' },
+                                { to: '/downloads', label: 'Annual Reports', icon: 'fa-chart-bar' },
+                                { to: '/directory', label: 'Officers Directory', icon: 'fa-address-book' },
+                                { to: '/contact', label: 'Grievance Portal', icon: 'fa-headset' },
+                            ].map(item => (
+                                <li key={item.label}>
+                                    <Link to={item.to} className="flex items-center gap-3 text-sm text-stone-600 hover:text-stone-900 transition-colors group">
+                                        <i className={`fas ${item.icon} text-gold-500 group-hover:text-gold-600 transition-colors w-4 text-center text-xs`}></i>
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    {/* Connect */}
+                    {/* Column 4: Contact Info */}
                     <div>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-green-400 mb-4">Connect With Us</h4>
-                        <div className="space-y-2 mb-5 text-sm text-green-200">
-                            <p>Reference public-sector portals:</p>
-                            <a href="https://fdcm.co.in/" className="block hover:text-white transition" target="_blank" rel="noreferrer">Forest Development Corporation of Maharashtra</a>
-                            <a href="http://rvvn.cgstate.gov.in/hi" className="block hover:text-white transition" target="_blank" rel="noreferrer">Chhattisgarh RVVN</a>
+                        <h4 className="text-xs font-bold uppercase tracking-widest text-stone-400 mb-5 pb-2 border-b border-beige-300">Head Office</h4>
+                        <div className="space-y-4 text-sm text-stone-600">
+                            <div className="flex gap-3">
+                                <i className="fas fa-map-marker-alt text-gold-500 mt-0.5 w-4 text-center flex-shrink-0 text-xs"></i>
+                                <span className="leading-relaxed">Van Bhawan, Block-C, 1st Floor,<br />Tulsi Nagar, Bhopal – 462003<br />Madhya Pradesh, India</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <i className="fas fa-phone text-gold-500 w-4 text-center flex-shrink-0 text-xs"></i>
+                                <a href="tel:07552674204" className="hover:text-stone-900 transition-colors">0755-2674204</a>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <i className="fas fa-envelope text-gold-500 w-4 text-center flex-shrink-0 text-xs"></i>
+                                <a href="mailto:mdrvvn@mp.gov.in" className="hover:text-stone-900 transition-colors break-all">mdrvvn@mp.gov.in</a>
+                            </div>
                         </div>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-green-400 mb-3">Office Location</h4>
-                        <p className="text-green-300/80 text-sm leading-relaxed">
-                            Van Bhawan Campus<br/>
-                            Bhopal, Madhya Pradesh<br/>
-                            India
-                        </p>
                     </div>
                 </div>
             </div>
 
-            {/* Bottom bar */}
-            <div className="border-t border-green-800/50">
-                <div className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
-                    <p className="text-green-400/60 text-xs">
-                        © 2026 MPRVVN, Government of Madhya Pradesh. All Rights Reserved.
+            {/* ── Bottom Bar ── */}
+            <div className="bg-beige-200 border-t border-beige-300">
+                <div className="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+                    <p className="text-xs text-stone-500 text-center sm:text-left">
+                        © 2026 MP Rajya Van Vikas Nigam Ltd. — Government of Madhya Pradesh. All rights reserved.
                     </p>
-                    <p className="text-green-400/60 text-xs">
-                        Last Updated: <span className="text-green-300/80">May 2026</span> | Public Information Portal
+                    <p className="text-xs text-stone-400">
+                        Last Updated: <span className="text-stone-600 font-semibold">May 2026</span> · Public Information Portal
                     </p>
                 </div>
             </div>

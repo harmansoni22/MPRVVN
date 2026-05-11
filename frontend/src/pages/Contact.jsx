@@ -57,7 +57,7 @@ const Contact = () => {
             <div className="bg-beige-50 py-16 px-4">
                 <div className="container mx-auto max-w-6xl">
                     <div className="grid lg:grid-cols-5 gap-12">
-                        
+
                         {/* Contact Information (Left Column) */}
                         <div className="lg:col-span-2 space-y-8">
                             <div>
@@ -79,6 +79,9 @@ const Contact = () => {
                                             Van Bhawan, Block-C, 1st Floor,<br />
                                             Tulsi Nagar, Bhopal,<br />
                                             Madhya Pradesh - 462003, India
+                                            {/* Panchanan, 5th Floor,<br />
+                                            Malviya Nagar, Bhopal,<br />
+                                            Madhya Pradesh - 462003, India. */}
                                         </p>
                                     </div>
                                 </div>
@@ -119,16 +122,17 @@ const Contact = () => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             {/* Interactive Google Map */}
                             <div className="mt-8 bg-gray-200 rounded-xl h-64 w-full border border-beige-300 overflow-hidden shadow-inner">
-                                <iframe 
-                                    src="https://maps.google.com/maps?q=Van%20Bhawan,%20Tulsi%20Nagar,%20Bhopal,%20Madhya%20Pradesh&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style={{ border: 0 }} 
-                                    allowFullScreen="" 
-                                    loading="lazy" 
+                                <iframe
+                                    // src="https://maps.google.com/maps?q=Panchanan%205th%20Floor%20Malviya%20Nagar%20Bhopal%20Madhya%20Pradesh%20462003&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                                    src="https://maps.google.com/maps?q=Van%20Bhawan,%20Tulsi%20Nagar,%20Bhopal,%20Madhya%20Pradesh&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                     title="MPFSDC Headquarters Location"
                                 ></iframe>
@@ -143,49 +147,49 @@ const Contact = () => {
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-olive-800 font-semibold mb-2">Full Name <span className="text-red-500">*</span></label>
-                                            <input 
-                                                type="text" 
-                                                name="name" 
+                                            <input
+                                                type="text"
+                                                name="name"
                                                 value={formData.name}
                                                 onChange={handleInputChange}
-                                                required 
+                                                required
                                                 placeholder="Enter your name"
-                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors" 
+                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors"
                                             />
                                         </div>
                                         <div>
                                             <label className="block text-olive-800 font-semibold mb-2">Email Address <span className="text-red-500">*</span></label>
-                                            <input 
-                                                type="email" 
-                                                name="email" 
+                                            <input
+                                                type="email"
+                                                name="email"
                                                 value={formData.email}
                                                 onChange={handleInputChange}
-                                                required 
+                                                required
                                                 placeholder="Enter your email"
-                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors" 
+                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors"
                                             />
                                         </div>
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
                                             <label className="block text-olive-800 font-semibold mb-2">Phone Number</label>
-                                            <input 
-                                                type="tel" 
-                                                name="phone" 
+                                            <input
+                                                type="tel"
+                                                name="phone"
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 placeholder="Enter your phone number"
-                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors" 
+                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors"
                                             />
                                         </div>
                                         <div>
                                             <label className="block text-olive-800 font-semibold mb-2">Inquiry Subject <span className="text-red-500">*</span></label>
-                                            <select 
-                                                name="subject" 
+                                            <select
+                                                name="subject"
                                                 value={formData.subject}
                                                 onChange={handleInputChange}
-                                                required 
-                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors text-olive-800" 
+                                                required
+                                                className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors text-olive-800"
                                             >
                                                 <option value="">Select Subject</option>
                                                 <option value="general">General Inquiry</option>
@@ -199,25 +203,25 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <label className="block text-olive-800 font-semibold mb-2">Message <span className="text-red-500">*</span></label>
-                                        <textarea 
-                                            name="message" 
-                                            rows="5" 
+                                        <textarea
+                                            name="message"
+                                            rows="5"
                                             value={formData.message}
                                             onChange={handleInputChange}
-                                            required 
+                                            required
                                             placeholder="How can we help you?"
-                                            className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors resize-none" 
+                                            className="w-full px-4 py-3 bg-beige-50 border border-beige-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-olive-500 transition-colors resize-none"
                                         ></textarea>
                                     </div>
                                     <div className="flex items-start pt-2">
-                                        <input 
-                                            type="checkbox" 
-                                            id="consent" 
-                                            name="consent" 
+                                        <input
+                                            type="checkbox"
+                                            id="consent"
+                                            name="consent"
                                             checked={formData.consent}
                                             onChange={handleInputChange}
-                                            required 
-                                            className="mt-1 mr-3 w-4 h-4 text-olive-600 bg-beige-50 border-beige-300 rounded focus:ring-olive-500" 
+                                            required
+                                            className="mt-1 mr-3 w-4 h-4 text-olive-600 bg-beige-50 border-beige-300 rounded focus:ring-olive-500"
                                         />
                                         <label htmlFor="consent" className="text-olive-700 text-sm leading-relaxed">
                                             I consent to having MPFSDC collect my details via this form. I agree to the <a href="#" className="text-gold-600 hover:text-gold-700 hover:underline font-semibold">Privacy Policy</a> and <a href="#" className="text-gold-600 hover:text-gold-700 hover:underline font-semibold">Terms of Service</a>.
@@ -238,11 +242,27 @@ const Contact = () => {
                 </div>
             </div>
 
+            {/* Directory of Officers CTA */}
+            <div className="bg-white py-12 px-4 border-t border-beige-200">
+                <div className="container mx-auto max-w-4xl text-center">
+                    <div className="bg-beige-100 rounded-2xl p-8 border border-beige-200 shadow-sm">
+                        <i className="fas fa-address-book text-4xl text-olive-600 mb-4"></i>
+                        <h2 className="text-2xl font-bold text-olive-900 mb-3">Looking for a specific officer or regional office?</h2>
+                        <p className="text-olive-700 mb-6 max-w-2xl mx-auto">
+                            We have compiled a complete directory of all our Head Office executives, Regional Chief General Managers, and Divisional Managers, including their postal addresses and direct telephone numbers.
+                        </p>
+                        <a href="/directory" className="inline-flex items-center gap-2 bg-olive-700 text-beige-50 px-6 py-3 rounded-lg hover:bg-olive-800 transition font-bold shadow-sm">
+                            View Full Officers Directory <i className="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             {showNotification && (
                 <div className="fixed bottom-8 right-8 px-6 py-4 bg-olive-800 text-beige-50 rounded-lg shadow-xl border-l-4 border-gold-500 z-50 transform transition-transform duration-300 flex items-center gap-3">
                     <i className="fas fa-check-circle text-gold-400 text-xl"></i>
                     <span className="font-medium">Message sent successfully! We'll get back to you soon.</span>
-                    <button 
+                    <button
                         onClick={() => setShowNotification(false)}
                         className="ml-4 hover:text-gold-400 transition-colors"
                     >

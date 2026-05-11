@@ -72,7 +72,7 @@ const About = () => {
                         <div className="text-gray-800 text-center max-w-4xl mx-auto">
                             <h1 className="text-5xl font-bold mb-6 animate-on-scroll">About MPFSDC</h1>
                             <p className="text-xl mb-8 animate-on-scroll">
-                                Leading sustainable forest management and conservation in Madhya Pradesh since 1985
+                                Leading sustainable forest management and conservation in Madhya Pradesh since 1975
                             </p>
                             <div className="flex flex-wrap justify-center gap-4 animate-on-scroll">
                                 <div className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-3 shadow-md">
@@ -82,7 +82,7 @@ const About = () => {
                                     <i className="fas fa-users mr-2 text-green-800"></i> 50K+ Employed
                                 </div>
                                 <div className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-3 shadow-md">
-                                    <i className="fas fa-award mr-2 text-green-800"></i> FSC Certified
+                                    <i className="fas fa-award mr-2 text-green-800"></i> Working towards FSC Certification
                                 </div>
                             </div>
                         </div>

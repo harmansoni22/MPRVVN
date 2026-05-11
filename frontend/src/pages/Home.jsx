@@ -39,45 +39,123 @@ const Home = () => {
 
     return (
         <PageShell>
-            {/* Split Hero Section */}
-            <section className="bg-beige-100 flex flex-col md:flex-row min-h-[75vh] border-b-4 border-gold-400">
-                {/* Left side: Welcome Message */}
-                <div className="flex-1 flex items-center justify-center p-8 md:p-16 lg:p-24 bg-olive-900 text-beige-50">
-                    <div className="max-w-xl">
-                        <span className="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-[0.2em] text-olive-900 bg-gold-400 rounded-full">EST. 1975</span>
-                        <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-beige-50">
-                            Sustainable Forest Management for a Greener Tomorrow
-                        </h1>
-                        <p className="mb-8 text-lg md:text-xl text-beige-200 leading-relaxed font-light">
-                            Promoting environmental conservation and economic development through sustainable forest practices across Madhya Pradesh.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Link to="/about" className="rounded-lg bg-gold-500 px-6 py-3.5 font-bold text-olive-900 hover:bg-gold-400 transition-colors shadow-lg flex items-center gap-2">
-                                <i className="fas fa-leaf"></i> About MPFSDC
-                            </Link>
-                            <Link to="/auctions" className="rounded-lg border-2 border-beige-300 px-6 py-3.5 font-bold text-beige-100 hover:bg-beige-100 hover:text-olive-900 transition-colors flex items-center gap-2">
-                                <i className="fas fa-gavel"></i> E-Auction Portal
-                            </Link>
+            {/* ── HERO SECTION ── */}
+            <section className="relative bg-beige-50 overflow-hidden border-b border-beige-200">
+                {/* Subtle background pattern */}
+                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, #465A37 1px, transparent 1px)', backgroundSize: '28px 28px' }}></div>
+
+                <div className="relative flex flex-col lg:flex-row min-h-[82vh]">
+
+                    {/* ── LEFT: Text Content ── */}
+                    <div className="flex-1 flex items-center px-8 md:px-16 lg:px-20 xl:px-28 py-16 lg:py-0">
+                        <div className="max-w-xl w-full">
+
+                            {/* Welcome line (separated) */}
+                            <div className="mb-7">
+                                <span className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[0.18em] uppercase text-olive-700 bg-olive-100 border border-olive-200 rounded-full">
+                                    <i className="fas fa-leaf text-olive-500 text-[10px]" /> Welcome to MPFSDC
+                                </span>
+                            </div>
+
+
+                            {/* Government badge */}
+                            {/* <div className="flex items-center gap-3 mb-6">
+                                <span className="inline-flex items-center gap-2 px-3 py-1 text-[11px] font-bold tracking-[0.18em] uppercase text-olive-700 bg-olive-100 border border-olive-200 rounded-full">
+                                    <i className="fas fa-leaf text-olive-500 text-[10px]"></i> Govt. of Madhya Pradesh
+                                </span>
+                                <span className="text-beige-400 font-light">·</span>
+                                <span className="text-xs font-semibold text-beige-500 tracking-wider">Est. 1975</span>
+                            </div> */}
+
+                            {/* Main Heading (replaced by welcome line) */}
+                            <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-olive-900 leading-[1.12] tracking-tight mb-6">
+                                Welcome to <span className="text-gold-500">MPRVVN</span>
+
+                            </h1>
+
+                            {/* Original main heading commented out */}
+                            {/*
+                            <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-olive-900 leading-[1.12] tracking-tight mb-6">
+                                Sustainable{' '}
+                                <span className="relative inline-block">
+                                    <span className="relative z-10 text-olive-700">Forest</span>
+                                    <span className="absolute bottom-1 left-0 w-full h-3 bg-gold-200 -z-0 rounded" />
+                                </span>
+                                {' '}Management
+                                <br className="hidden md:block" />
+                                <span className="text-olive-600"> for Madhya Pradesh</span>
+                            </h1>
+                            */}
+
+
+                            {/* Subtext */}
+                            <p className="text-base md:text-lg text-olive-600 leading-relaxed mb-10 max-w-md">
+                                Promoting environmental conservation and economic development through scientifically managed forest practices across the state.
+                            </p>
+
+
+                            {/* CTA Buttons */}
+                            <div className="flex flex-wrap gap-4 mb-12">
+                                <Link to="/about" className="inline-flex items-center gap-2.5 bg-olive-800 text-beige-50 px-6 py-3.5 rounded-lg font-bold hover:bg-olive-900 transition-colors shadow-md hover:shadow-lg">
+                                    <i className="fas fa-leaf text-gold-400"></i>
+                                    About MPFSDC
+                                </Link>
+                                <Link to="/auctions" className="inline-flex items-center gap-2.5 bg-white text-olive-800 border-2 border-beige-300 px-6 py-3.5 rounded-lg font-bold hover:border-olive-400 hover:bg-beige-50 transition-all">
+                                    <i className="fas fa-gavel text-olive-600"></i>
+                                    E-Auction Portal
+                                </Link>
+                            </div>
+
+                            {/* Key stats row */}
+                            <div className="flex items-center gap-6 pt-8 border-t border-beige-200">
+                                <div>
+                                    <div className="text-2xl font-extrabold text-olive-900">11</div>
+                                    <div className="text-xs text-olive-500 font-semibold uppercase tracking-wide mt-0.5">Project Divisions</div>
+                                </div>
+                                <div className="w-px h-10 bg-beige-300"></div>
+                                <div>
+                                    <div className="text-2xl font-extrabold text-olive-900">732</div>
+                                    <div className="text-xs text-olive-500 font-semibold uppercase tracking-wide mt-0.5">JFM Samitis</div>
+                                </div>
+                                <div className="w-px h-10 bg-beige-300"></div>
+                                <div>
+                                    <div className="text-2xl font-extrabold text-olive-900">50+</div>
+                                    <div className="text-xs text-olive-500 font-semibold uppercase tracking-wide mt-0.5">Years of Service</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Right side: Large Photo Banner */}
-                <div className="flex-1 relative min-h-[40vh] md:min-h-full overflow-hidden bg-olive-900">
-                    <div className="absolute inset-0 bg-cover bg-center opacity-70" style={{ backgroundImage: "url('/hero-forest.png')" }}></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-olive-900 via-olive-900/20 to-transparent"></div>
+                    {/* ── RIGHT: Image ── */}
+                    <div className="lg:w-[52%] relative min-h-[50vw] lg:min-h-full overflow-hidden">
+                        <img
+                            src="/hero-forest.png"
+                            alt="Madhya Pradesh forest landscape"
+                            className="absolute inset-0 w-full h-full object-cover"
+                        />
 
-                    {/* Overlay Stats */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8 grid grid-cols-2 gap-4 text-beige-50">
-                        <div className="bg-olive-800/80 backdrop-blur-md p-4 rounded-xl border border-olive-600/50">
-                            <div className="text-3xl font-extrabold text-gold-400">11</div>
-                            <div className="text-sm text-beige-200 mt-1">Project Divisions</div>
-                        </div>
-                        <div className="bg-olive-800/80 backdrop-blur-md p-4 rounded-xl border border-olive-600/50">
-                            <div className="text-3xl font-extrabold text-gold-400">732</div>
-                            <div className="text-sm text-beige-200 mt-1">JFM Samitis</div>
-                        </div>
+                        {/* Modern overlay fades */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-beige-50/70 via-beige-50/10 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-olive-900/40 via-transparent to-transparent" />
+
+                        {/* Framed image look */}
+                        <div className="absolute inset-4 md:inset-8 rounded-3xl border border-white/20 shadow-[0_20px_60px_rgba(0,0,0,0.12)] pointer-events-none" />
+
+                        {/* Floating badge */}
+
+                        {/* <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-beige-200">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-olive-100 rounded-full flex items-center justify-center">
+                                    <i className="fas fa-certificate text-olive-600"></i>
+                                </div>
+                                <div>
+                                    <div className="text-xs font-bold text-olive-900">FSC Certified</div>
+                                    <div className="text-[10px] text-olive-500">Sustainable Forestry</div>
+                                </div>
+                            </div>
+                        </div> */}
                     </div>
+
                 </div>
             </section>
 
@@ -86,19 +164,24 @@ const Home = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-wrap justify-center gap-3">
                         {[
-                            { name: 'About Us', icon: 'fa-info-circle' },
-                            { name: 'Organisation Chart', icon: 'fa-sitemap' },
-                            { name: 'Board of Directors', icon: 'fa-users' },
-                            { name: 'Management Plan', icon: 'fa-book' },
-                            { name: 'Plantation', icon: 'fa-tree' },
-                            { name: 'Nurseries', icon: 'fa-seedling' },
-                            { name: 'Monthly Auction', icon: 'fa-calendar-alt' },
-                            { name: 'Terms & Conditions', icon: 'fa-file-contract' },
+                            { name: 'About Us', icon: 'fa-info-circle', to: '/about#about-us' },
+                            { name: 'Organisation Chart', icon: 'fa-sitemap', to: '/about#organisation-chart' },
+                            { name: 'Board of Directors', icon: 'fa-users', to: '/about#board-of-directors' },
+                            { name: 'Management Plan', icon: 'fa-book', to: '/downloads#management-plan' },
+                            { name: 'Plantation', icon: 'fa-tree', to: '/forestry-activities#plantation' },
+                            { name: 'Nurseries', icon: 'fa-seedling', to: '/forestry-activities#nursery' },
+                            { name: 'Monthly Auction', icon: 'fa-calendar-alt', to: '/auctions' },
+                            { name: 'Terms & Conditions', icon: 'fa-file-contract', to: '/tenders' },
                         ].map((item) => (
-                            <Link to="#" key={item.name} className="bg-white border border-beige-300 rounded-md px-4 py-2 text-sm font-semibold text-olive-800 hover:bg-olive-50 hover:border-olive-400 transition-colors flex items-center gap-2">
+                            <Link
+                                to={item.to}
+                                key={item.name}
+                                className="bg-white border border-beige-300 rounded-md px-4 py-2 text-sm font-semibold text-olive-800 hover:bg-olive-50 hover:border-olive-400 transition-colors flex items-center gap-2"
+                            >
                                 <i className={`fas ${item.icon} text-olive-500`}></i> {item.name}
                             </Link>
                         ))}
+
                     </div>
                 </div>
             </section>
@@ -265,11 +348,11 @@ const Home = () => {
             </section>
 
             {/* Dedicated CTA Section */}
-            <section className="bg-beige-100 py-20 px-4 text-center">
+            <section className="bg-beige-100 py-20 px-4 text-center border-y border-beige-200">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-extrabold text-olive-900 mb-6">Partner With Us</h2>
                     <p className="text-lg md:text-xl text-olive-700 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Join hands with MPFSDC to create sustainable ecological impact. We are open to innovative collaborations, CSR projects, and large-scale deposit works.
+                        Build long-term ecological and socio-economic value through deposit works, eco-restoration, and CSR-linked plantation programs.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link to="/contact" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-beige-50 bg-olive-700 hover:bg-olive-800 rounded-lg shadow-md transition-all hover:shadow-lg w-full sm:w-auto gap-2 border-2 border-olive-700">
@@ -282,8 +365,104 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* How MPFSDC works (factual, non-numeric) */}
+            <section className="bg-white py-16 px-4 border-b border-beige-200">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+                        <div className="max-w-2xl">
+                            <h2 className="text-3xl md:text-5xl font-extrabold text-olive-900">How we deliver</h2>
+                            <p className="mt-3 text-lg text-stone-600 leading-relaxed">
+                                Forest development programs typically follow a sequence: planning, nursery preparation, field execution, protection & monitoring, and documentation. This page explains that common flow in a simple way.
+                            </p>
+                        </div>
+                        <div className="rounded-2xl border border-beige-200 bg-beige-50 px-6 py-4">
+                            <div className="text-sm font-bold text-olive-900">What you can expect</div>
+                            <div className="mt-2 text-sm text-olive-700">
+                                Clear scopes, protection-focused delivery, and outcome reporting through official records.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-4 gap-6">
+                        {[
+                            {
+                                title: '1) Planning',
+                                body: 'Site selection, species planning, and operational scheduling for the required forestry activity.'
+                            },
+                            {
+                                title: '2) Nursery & Inputs',
+                                body: 'Propagation and preparation of planting material along with the required inputs and logistics.'
+                            },
+                            {
+                                title: '3) Field Execution',
+                                body: 'Plantation, protection infrastructure, and on-ground implementation as per the approved plan.'
+                            },
+                            {
+                                title: '4) Protection & Monitoring',
+                                body: 'Surveillance, maintenance, and post-planting monitoring to ensure survival and health.'
+                            }
+                        ].map((item) => (
+                            <article key={item.title} className="rounded-2xl border border-beige-200 bg-white p-6 shadow-sm">
+                                <div className="text-olive-900 font-extrabold text-lg">{item.title}</div>
+                                <p className="mt-3 text-sm text-stone-600 leading-relaxed">{item.body}</p>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* FAQ */}
+            <section className="bg-beige-50 py-16 px-4">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-olive-900">Frequently asked</h2>
+                        <p className="mt-3 text-lg text-stone-600">Quick answers to common questions from visitors and stakeholders.</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                        {[
+                            {
+                                q: 'How can I find tenders and e-auction updates?',
+                                a: 'Use the E-Services entry point and open the E-Auctions or Tenders & Notices pages, then follow the posted instructions for each notice.'
+                            },
+                            {
+                                q: 'Where can I download official documents?',
+                                a: 'Visit the Document Center (Downloads page) and open the relevant category for reports, guidelines, and other published materials.'
+                            },
+                            {
+                                q: 'What is a deposit work?',
+                                a: 'In many public procurement and forestry contexts, deposit works refer to implementation of activities on behalf of an external agency under an agreed scope and process.'
+                            },
+                            {
+                                q: 'How do partnerships work?',
+                                a: 'Partnerships are typically initiated through contact/queries, followed by scoping discussions, and then execution aligned to the agreed objectives and documentation requirements.'
+                            }
+                        ].map((item) => (
+                            <article key={item.q} className="rounded-2xl border border-beige-200 bg-white p-6 shadow-sm">
+                                <h3 className="text-lg font-bold text-olive-900">{item.q}</h3>
+                                <p className="mt-3 text-sm text-stone-600 leading-relaxed">{item.a}</p>
+                            </article>
+                        ))}
+                    </div>
+
+                    {/* Simple internal navigation */}
+                    <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-3">
+                        <Link to="/e-services" className="rounded-lg bg-olive-900 text-beige-50 px-6 py-3 text-sm font-bold hover:bg-olive-800 transition-colors">
+                            Explore E-Services
+                        </Link>
+                        <Link to="/downloads" className="rounded-lg border border-olive-900/20 bg-white px-6 py-3 text-sm font-bold text-olive-900 hover:border-olive-900 hover:bg-beige-50 transition-colors">
+                            Open Document Center
+                        </Link>
+                        <Link to="/contact" className="rounded-lg border border-olive-900/20 bg-white px-6 py-3 text-sm font-bold text-olive-900 hover:border-olive-900 hover:bg-beige-50 transition-colors">
+                            Contact MPRVVN
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
         </PageShell>
     );
 };
+
 
 export default Home;

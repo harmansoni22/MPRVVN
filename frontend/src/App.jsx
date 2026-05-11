@@ -12,10 +12,13 @@ import Gallery from './pages/Gallery';
 import Tenders from './pages/Tenders';
 import Downloads from './pages/Downloads';
 import Contact from './pages/Contact';
+import Directory from './pages/Directory';
 import './index.css';
 
 import ForestryActivities from './pages/ForestryActivities';
 import TurnkeyProjects from './pages/TurnkeyProjects';
+import Operations from './pages/Operations';
+import EServices from './pages/EServices';
 
 function AppRoutes() {
     return (
@@ -31,6 +34,9 @@ function AppRoutes() {
                     <Route path="/tenders" element={<Tenders />} />
                     <Route path="/downloads" element={<Downloads />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/directory" element={<Directory />} />
+                    <Route path="/operations" element={<Operations />} />
+                    <Route path="/e-services" element={<EServices />} />
                     <Route path="/forestry-activities" element={<ForestryActivities />} />
                     <Route path="/turnkey-projects" element={<TurnkeyProjects />} />
                 </Routes>

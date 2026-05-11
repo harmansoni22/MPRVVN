@@ -3,14 +3,15 @@ import { createContext, useState, useContext, useCallback } from 'react';
 
 export const LanguageContext = createContext({
     lang: 'en',
-    setLang: () => {},
+    setLang: () => { },
+    toggle: () => { },
     t: (key) => key,
 });
 
 const translations = {
     en: {
         home: 'Home',
-        about: 'About Us',
+        about: 'About MPRVVN',
         services: 'Services',
         projects: 'Projects',
         auctions: 'Auctions',
@@ -20,25 +21,31 @@ const translations = {
         search: 'Search',
         accessibility: 'Accessibility',
         noticeBoard: 'Notice Board',
-        welcome: 'Welcome to MPFSDC',
-        heroTitle: 'Sustainable Forest Management for a Greener Tomorrow',
-        heroDesc: 'Promoting environmental conservation and economic development through sustainable forest practices across Madhya Pradesh.',
-        aboutMpf: 'About MPFSDC',
+
+        welcome: 'Welcome to MPRVVN',
+        heroTitle: 'Sustainable Forest Development for a Greener Madhya Pradesh',
+        heroDesc: 'Promoting forest conservation, plantation development, and public value through sustainable forestry initiatives across Madhya Pradesh.',
+
+        aboutMpf: 'About MPRVVN',
         auctionPortal: 'E-Auction Portal',
         quickLinks: 'Quick Links',
         leadership: 'Leadership Corner',
-        specialInitiatives: 'Our Special Initiatives',
+        specialInitiatives: 'Special Initiatives',
         photoGallery: 'Photo Gallery',
         viewAll: 'View All',
         documents: 'Important Documents',
-        partner: 'Partner With Us for a Sustainable Future',
-        partnerDesc: 'We welcome partnerships with government agencies, NGOs, and private organizations for collaborative forest conservation.',
-        footerAbout: 'Madhya Pradesh Forest State Development Corporation is committed to sustainable forest management, biodiversity conservation, and community empowerment.',
-        subscribe: 'Stay Updated with MPFSDC',
-        subscribeDesc: 'Get the latest news on auctions, tenders, and forest initiatives.',
+
+        partner: 'Partner With Us for Sustainable Forest Development',
+        partnerDesc: 'We welcome collaboration with government bodies, institutions, and organizations working toward forestry, conservation, and rural development.',
+
+        footerAbout: 'Madhya Pradesh Rajya Van Vikas Nigam Ltd. is committed to sustainable forest development, scientific resource management, and public-oriented forestry services.',
+
+        subscribe: 'Stay Updated with MPRVVN',
+        subscribeDesc: 'Get updates on tenders, auctions, projects, and forest initiatives.',
         enterEmail: 'Enter your email',
         subscribeBtn: 'Subscribe',
         thankYou: 'Thank you for subscribing!',
+
         quickLinksFooter: 'Quick Links',
         importantLinks: 'Important Links',
         connect: 'Connect With Us',
@@ -47,9 +54,10 @@ const translations = {
         lastUpdated: 'Last Updated',
         visitorCount: 'Visitor Count',
     },
+
     hi: {
         home: 'होम',
-        about: 'हमारे बारे में',
+        about: 'MPRVVN के बारे में',
         services: 'सेवाएं',
         projects: 'परियोजनाएं',
         auctions: 'नीलामी',
@@ -59,32 +67,38 @@ const translations = {
         search: 'खोज',
         accessibility: 'पहुंचनीयता',
         noticeBoard: 'सूचना पट्ट',
-        welcome: 'MPFSDC में आपका स्वागत है',
-        heroTitle: 'हरे-भरे कल के लिए टिकाऊ वन प्रबंधन',
-        heroDesc: 'मध्य प्रदेश में टिकाऊ वन प्रथाओं के माध्यम से पर्यावरण संरक्षण और आर्थिक विकास को बढ़ावा देना।',
-        aboutMpf: 'MPFSDC के बारे में',
+
+        welcome: 'MPRVVN में आपका स्वागत है',
+        heroTitle: 'हरित मध्य प्रदेश के लिए सतत वन विकास',
+        heroDesc: 'मध्य प्रदेश में सतत वानिकी पहलों के माध्यम से वन संरक्षण, वृक्षारोपण विकास और जनहितकारी सेवाओं को बढ़ावा देना।',
+
+        aboutMpf: 'MPRVVN के बारे में',
         auctionPortal: 'ई-नीलामी पोर्टल',
         quickLinks: 'त्वरित लिंक',
-        leadership: 'नेतृत्व क्षेत्र',
-        specialInitiatives: 'हमारी विशेष पहल',
+        leadership: 'नेतृत्व अनुभाग',
+        specialInitiatives: 'विशेष पहल',
         photoGallery: 'फोटो गैलरी',
         viewAll: 'सभी देखें',
         documents: 'महत्वपूर्ण दस्तावेज',
-        partner: 'टिकाऊ भविष्य के लिए हमारे साथ भागीदारी करें',
-        partnerDesc: 'सहयोगी वन संरक्षण और सामुदायिक विकास परियोजनाओं के लिए हम सरकारी एजेंसियों, एनजीओ और निजी संगठनों के साथ साझेदारी का स्वागत करते हैं।',
-        footerAbout: 'मध्य प्रदेश वन राज्य विकास निगम टिकाऊ वन प्रबंधन, जैव विविधता संरक्षण और सामुदायिक सशक्तिकरण के लिए प्रतिबद्ध है।',
-        subscribe: 'MPFSDC के साथ अपडेट रहें',
-        subscribeDesc: 'नीलामी, टेंडर और वन पहलों पर नवीनतम समाचार प्राप्त करें।',
+
+        partner: 'सतत वन विकास के लिए हमारे साथ साझेदारी करें',
+        partnerDesc: 'हम वानिकी, संरक्षण और ग्रामीण विकास के क्षेत्र में कार्यरत सरकारी निकायों, संस्थानों और संगठनों के साथ सहयोग का स्वागत करते हैं।',
+
+        footerAbout: 'मध्य प्रदेश राज्य वन विकास निगम लिमिटेड सतत वन विकास, वैज्ञानिक संसाधन प्रबंधन और जनोन्मुखी वानिकी सेवाओं के लिए प्रतिबद्ध है।',
+
+        subscribe: 'MPRVVN से अपडेट रहें',
+        subscribeDesc: 'टेंडर, नीलामी, परियोजनाओं और वन संबंधी पहलों की जानकारी प्राप्त करें।',
         enterEmail: 'अपना ईमेल दर्ज करें',
         subscribeBtn: 'सदस्यता लें',
         thankYou: 'सदस्यता लेने के लिए धन्यवाद!',
+
         quickLinksFooter: 'त्वरित लिंक',
         importantLinks: 'महत्वपूर्ण लिंक',
         connect: 'हमसे जुड़ें',
         office: 'कार्यालय स्थान',
         rights: 'सर्वाधिकार सुरक्षित।',
         lastUpdated: 'अंतिम अद्यतन',
-        visitorCount: 'आगंतुक गणना',
+        visitorCount: 'आगंतुक संख्या',
     },
 };
 
@@ -96,7 +110,7 @@ export const LanguageProvider = ({ children }) => {
     }, [lang]);
 
     const toggle = useCallback(() => {
-        setLang(prev => prev === 'en' ? 'hi' : 'en');
+        setLang(prev => (prev === 'en' ? 'hi' : 'en'));
     }, []);
 
     return (

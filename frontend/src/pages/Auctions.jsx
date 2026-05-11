@@ -35,11 +35,21 @@ const Auctions = () => {
                     </ol>
                 </article>
                 <article className="rounded-xl border border-stone-200 bg-white p-5">
-                    <h3 className="font-bold text-emerald-800">Related Links</h3>
-                    <ul className="mt-3 space-y-2 text-sm">
-                        <li><a href="https://fdcm.co.in/" target="_blank" rel="noreferrer" className="text-emerald-700 hover:underline">FDCM public auction updates</a></li>
-                        <li><a href="https://cgfdceauction.in/Auction/Upcoming_AuctionDetail/200" target="_blank" rel="noreferrer" className="text-emerald-700 hover:underline">CG e-auction reference portal</a></li>
-                    </ul>
+                    <h3 className="font-bold text-emerald-800">Auction Overview</h3>
+                    <p className="mt-2 text-sm text-stone-700 leading-relaxed">
+                        This page provides an at-a-glance overview of the e-auction cycle, including how auctions are typically organized into windows,
+                        and what bidders should expect in the workflow (publication → inspection window → bid submission → compliance).
+                    </p>
+
+                    <div className="mt-4 bg-beige-50 border border-beige-200 rounded-xl p-4">
+                        <h4 className="font-bold text-emerald-900">What you will find here</h4>
+                        <ul className="mt-2 list-disc list-inside text-sm text-stone-700 space-y-1">
+                            <li>Current auction window snapshot</li>
+                            <li>Lot/material group categories</li>
+                            <li>Step-by-step auction process for bidders</li>
+                            <li>Practical checklists for readiness before bidding</li>
+                        </ul>
+                    </div>
                 </article>
             </section>
         </PageShell>
