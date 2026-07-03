@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "siteTitle": "मध्य प्रदेश राज्य वन विकास निगम (MPRVVN)",
+    "description": "मध्य प्रदेश राज्य वन विकास निगम लिमिटेड मध्य प्रदेश में सतत वन विकास, पारिस्थितिक संरक्षण एवं वैज्ञानिक वृक्षारोपण प्रबंधन के प्रति समर्पित है।"
+  },
+  "nav": {
+    "home": "मुख्य पृष्ठ",
+    "about": "हमारे बारे में",
+    "companyProfile": "कंपनी प्रोफ़ाइल",
+    "visionMission": "दृष्टि एवं मिशन",
+    "objectives": "उद्देश्य",
+    "board": "निदेशक मंडल",
+    "orgStructure": "संगठन संरचना",
+    "forestry": "वानिकी",
+    "plantation": "वृक्षारोपण",
+    "nursery": "नर्सरी",
+    "wildlife": "वन्यजीव संरक्षण",
+    "community": "समुदाय",
+    "depositWorks": "निक्षेप कार्य",
+    "csr": "सीएसआर",
+    "auctions": "नीलामी",
+    "contact": "संपर्क करें"
+  },
+  "header": {
+    "orgName": "मध्य प्रदेश राज्य वन विकास निगम लिमिटेड",
+    "shortName": "MPRVVN",
+    "tagline": "मध्य प्रदेश शासन का उपक्रम",
+    "govUndertaking": "मध्य प्रदेश शासन का उपक्रम",
+    "locationLine": "भोपाल, म.प्र."
+  },
+  "common": {
+    "skipToContent": "मुख्य सामग्री पर जाएँ",
+    "search": "खोज",
+    "searchOpen": "खोज खोलें",
+    "menu": "मेन्यू",
+    "openMenu": "मेन्यू खोलें",
+    "closeMenu": "मेन्यू बंद करें",
+    "close": "बंद करें",
+    "language": "भाषा",
+    "changeLanguage": "भाषा बदलें",
+    "readMore": "और पढ़ें",
+    "viewAll": "सभी देखें",
+    "learnMore": "अधिक जानें",
+    "backToHome": "मुख्य पृष्ठ पर लौटें",
+    "home": "मुख्य पृष्ठ",
+    "comingSoon": "सामग्री शीघ्र उपलब्ध होगी",
+    "emptySection": "यह अनुभाग शीघ्र ही अद्यतन किया जाएगा।",
+    "newBadge": "नया"
+  },
+  "a11y": {
+    "title": "सुगम्यता उपकरण",
+    "buttonLabel": "सुगम्यता विकल्प",
+    "highContrast": "उच्च कंट्रास्ट",
+    "grayscale": "ग्रेस्केल",
+    "largeText": "बड़ा टेक्स्ट",
+    "readableFont": "सुपाठ्य फ़ॉन्ट",
+    "dyslexicFont": "डिस्लेक्सिक फ़ॉन्ट",
+    "highlightLinks": "लिंक हाइलाइट करें",
+    "underlineLinks": "लिंक रेखांकित करें",
+    "resetAll": "सब रीसेट करें"
+  },
+  "search": {
+    "placeholder": "पृष्ठ, दस्तावेज़, सेवाएँ खोजें...",
+    "typeToSearch": "खोजने के लिए कम से कम 2 अक्षर लिखें",
+    "noResults": "\"{query}\" के लिए कोई परिणाम नहीं मिला",
+    "resultsCount": "{count} परिणाम",
+    "escToClose": "बंद करने के लिए ESC दबाएँ",
+    "poweredBy": "MPRVVN खोज",
+    "suggestions": "सुझाव"
+  },
+  "footer": {
+    "quickLinks": "त्वरित लिंक",
+    "regions": "क्षेत्र",
+    "regionSuffix": "क्षेत्र",
+    "headOffice": "प्रधान कार्यालय",
+    "rights": "सर्वाधिकार सुरक्षित।",
+    "govOfMp": "मध्य प्रदेश शासन",
+    "officialPortal": "आधिकारिक सार्वजनिक सूचना पोर्टल"
+  },
+  "home": {
+    "heroBadge": "मध्य प्रदेश शासन का उपक्रम",
+    "ctaAbout": "MPRVVN के बारे में",
+    "ctaForestry": "वानिकी गतिविधियाँ",
+    "quickLinksTitle": "त्वरित लिंक",
+    "statsTitle": "एक नज़र में",
+    "whatsNew": "नया क्या है",
+    "tenders": "निविदाएँ",
+    "careers": "रोज़गार",
+    "employeeCorner": "कर्मचारी कॉर्नर",
+    "forestryTitle": "हमारा वानिकी कार्य",
+    "executionTitle": "क्रियान्वयन ढाँचा",
+    "executionSubtitle": "संपूर्ण वृक्षारोपण जीवनचक्र प्रबंधन",
+    "experienceTitle": "प्रदर्शित अनुभव",
+    "trustedTitle": "प्रमुख संस्थानों का विश्वास",
+    "faqTitle": "अक्सर पूछे जाने वाले प्रश्न",
+    "aboutPreviewTitle": "MPRVVN के बारे में"
+  },
+  "breadcrumb": {
+    "home": "मुख्य पृष्ठ"
+  },
+  "pages": {
+    "about": {
+      "title": "हमारे बारे में",
+      "subtitle": "वानिकी उत्कृष्टता की अग्रणी यात्रा"
+    },
+    "visionMission": {
+      "title": "दृष्टि एवं मिशन",
+      "visionHeading": "दृष्टि कथन",
+      "missionHeading": "संगठन का मिशन",
+      "missionGovernment": "सरकार के प्रति मिशन",
+      "missionConsumers": "उपभोक्ताओं / लाभार्थियों के प्रति मिशन",
+      "missionEmployees": "कर्मचारियों के प्रति मिशन"
+    },
+    "objectives": {
+      "title": "उद्देश्य",
+      "subtitle": "संगठन के उद्देश्य"
+    },
+    "board": {
+      "title": "निदेशक मंडल",
+      "colSno": "क्र.सं.",
+      "colName": "नाम",
+      "colDesignation": "पदनाम"
+    },
+    "orgStructure": {
+      "title": "संगठन संरचना",
+      "divisionalOffices": "संभागीय कार्यालय"
+    },
+    "forestry": {
+      "title": "वानिकी गतिविधियाँ",
+      "subtitle": "मध्य प्रदेश भर में सतत, वैज्ञानिक एवं जलवायु-सहनशील वानिकी"
+    },
+    "plantation": {
+      "title": "वृक्षारोपण गतिविधियाँ",
+      "phaseTitle": "चरण-वार वृक्षारोपण विस्तार",
+      "colPhase": "चरण",
+      "colPeriod": "अवधि",
+      "colArea": "अनुमानित वृक्षारोपण क्षेत्र",
+      "speciesTitle": "प्रमुख प्रजातियाँ"
+    },
+    "nursery": {
+      "title": "नर्सरी",
+      "tableTitle": "नर्सरी नेटवर्क",
+      "colSno": "क्र. सं.",
+      "colDivision": "संभाग / मुख्यालय",
+      "colLocation": "नर्सरी स्थान",
+      "specializationTitle": "हमारी नर्सरियाँ इनमें विशेषज्ञ हैं"
+    },
+    "wildlife": {
+      "title": "वन्यजीव प्रबंधन एवं जैव विविधता संरक्षण",
+      "corridorsTitle": "प्रमुख वन्यजीव गलियारे",
+      "measuresTitle": "संरक्षण उपाय"
+    },
+    "community": {
+      "title": "समुदाय"
+    },
+    "depositWorks": {
+      "title": "निक्षेप कार्य",
+      "servicesTitle": "हमारी सेवाएँ",
+      "executionTitle": "क्रियान्वयन ढाँचा",
+      "executionSubtitle": "संपूर्ण वृक्षारोपण जीवनचक्र प्रबंधन",
+      "experienceTitle": "अनुभव",
+      "trustedTitle": "प्रमुख संस्थानों का विश्वास"
+    },
+    "csr": {
+      "title": "सीएसआर गतिविधियाँ",
+      "initiativesTitle": "प्रमुख पहल",
+      "categoryEducation": "शिक्षा सहायता",
+      "categoryInfrastructure": "सामुदायिक अवसंरचना",
+      "categoryRenewable": "अक्षय ऊर्जा",
+      "categorySkill": "कौशल विकास"
+    },
+    "auctions": {
+      "title": "नीलामी",
+      "scheduleTitle": "नीलामी की संभावित तिथियाँ",
+      "colSno": "क्र.सं.",
+      "colDivision": "परियोजना संभाग",
+      "colDepot": "डिपो",
+      "colAuctionDepot": "वह डिपो जहाँ नीलामी होगी",
+      "linksTitle": "नीलामी सूचनाएँ",
+      "tenderTitle": "निविदा",
+      "eauctionNote": "ई-नीलामी भविष्य में सक्षम की जा सकती है।",
+      "months": ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई"]
+    },
+    "contact": {
+      "title": "संपर्क करें",
+      "directoryTitle": "अधिकारी निर्देशिका",
+      "getInTouch": "संपर्क में रहें",
+      "colOffice": "कार्यालय का नाम",
+      "colName": "नाम एवं पदनाम",
+      "colAddress": "पता",
+      "headOfficeGroup": "प्रधान कार्यालय, भोपाल",
+      "bhopalGroup": "क्षेत्रीय मुख्य महाप्रबंधक, भोपाल",
+      "jabalpurGroup": "क्षेत्रीय मुख्य महाप्रबंधक, जबलपुर",
+      "timing": "समय",
+      "address": "पता"
+    },
+    "accessibility": {
+      "title": "सुगम्यता कथन",
+      "subtitle": "समावेशी, सुगम्य वेबसाइट के प्रति हमारी प्रतिबद्धता"
+    },
+    "notFound": {
+      "title": "पृष्ठ नहीं मिला",
+      "body": "आप जिस पृष्ठ की तलाश कर रहे हैं वह मौजूद नहीं है या स्थानांतरित हो गया है।",
+      "cta": "मुख्य पृष्ठ पर लौटें"
+    }
+  }
+}

@@ -1,0 +1,285 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  shadcn token -> Tailwind utility mapping (semantic, themeable)     */
+/* ------------------------------------------------------------------ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ------------------------------------------------------------------ */
+/*  MPRVVN brand palette (olive / beige / gold) ported from the demo   */
+/*  Enables utilities like bg-olive-800, text-beige-50, border-gold-500 */
+/* ------------------------------------------------------------------ */
+@theme {
+  --color-beige-50: #fffefc;
+  --color-beige-100: #fdfbf7;
+  --color-beige-200: #f5f2eb;
+  --color-beige-300: #ebe5d9;
+  --color-beige-400: #dfd5c5;
+  --color-beige-500: #d3c4ae;
+  --color-beige-600: #c0ad91;
+  --color-beige-700: #a48f71;
+  --color-beige-800: #8a765a;
+  --color-beige-900: #736149;
+
+  --color-olive-50: #f2f6ef;
+  --color-olive-100: #e2ebdc;
+  --color-olive-200: #c7d8bb;
+  --color-olive-300: #a7c196;
+  --color-olive-400: #8aa875;
+  --color-olive-500: #71905b;
+  --color-olive-600: #587345;
+  --color-olive-700: #465a37;
+  --color-olive-800: #3a4b2f;
+  --color-olive-900: #313f29;
+
+  --color-gold-50: #fdf9eb;
+  --color-gold-100: #fbf2c9;
+  --color-gold-200: #f4df8b;
+  --color-gold-300: #eccb4e;
+  --color-gold-400: #e6ba2b;
+  --color-gold-500: #d4a316;
+  --color-gold-600: #b4810f;
+  --color-gold-700: #905e10;
+  --color-gold-800: #774a14;
+  --color-gold-900: #643e15;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Light theme — neutral surfaces, olive primary/ring for brand        */
+/* ------------------------------------------------------------------ */
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  /* olive-800 */
+  --primary: #3a4b2f;
+  /* beige-50 */
+  --primary-foreground: #fffefc;
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  /* olive-600 */
+  --ring: #587345;
+  --chart-1: #465a37;
+  --chart-2: #71905b;
+  --chart-3: #d4a316;
+  --chart-4: #a48f71;
+  --chart-5: #8aa875;
+  --radius: 0.625rem;
+  --sidebar: #313f29;
+  --sidebar-foreground: #f5f2eb;
+  --sidebar-primary: #e6ba2b;
+  --sidebar-primary-foreground: #313f29;
+  --sidebar-accent: #3a4b2f;
+  --sidebar-accent-foreground: #fffefc;
+  --sidebar-border: #465a37;
+  --sidebar-ring: #71905b;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #8aa875;
+  --primary-foreground: #1c2417;
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: #8aa875;
+  --chart-1: #8aa875;
+  --chart-2: #71905b;
+  --chart-3: #e6ba2b;
+  --chart-4: #c0ad91;
+  --chart-5: #a7c196;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #e6ba2b;
+  --sidebar-primary-foreground: #1c2417;
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: #71905b;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Accessibility & UX helpers                                          */
+/* ------------------------------------------------------------------ */
+
+/* Skip-to-content link (visible only on focus) */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -3rem;
+  z-index: 100;
+  border-radius: 0.375rem;
+  background: var(--color-olive-800);
+  padding: 0.5rem 1rem;
+  color: var(--color-beige-50);
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Branded scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-beige-700);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-beige-800);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  header,
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Accessibility widget — toggled body classes (see AccessibilityPanel) */
+/* ------------------------------------------------------------------ */
+
+/* High contrast: force a black/white/gold high-legibility palette. */
+body.accessibility-high-contrast {
+  background: #000 !important;
+  color: #fff !important;
+}
+body.accessibility-high-contrast :where(p, span, li, td, th, h1, h2, h3, h4, h5, h6, dt, dd, strong, em, label, figcaption) {
+  color: #fff !important;
+}
+body.accessibility-high-contrast :where(header, nav, footer, section, article, aside, main, div) {
+  background-color: #000 !important;
+  border-color: #ffd400 !important;
+}
+body.accessibility-high-contrast :where(a, a *) {
+  color: #ffd400 !important;
+}
+body.accessibility-high-contrast :where(button) {
+  background-color: #000 !important;
+  color: #ffd400 !important;
+  border: 1px solid #ffd400 !important;
+}
+body.accessibility-high-contrast :where(img, svg) {
+  filter: contrast(1.15);
+}
+
+/* Highlight links: yellow background behind every link. */
+body.accessibility-highlight-links :where(a) {
+  background-color: #fff200 !important;
+  color: #000 !important;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Underline links: force underlines for clearer affordance. */
+body.accessibility-underline-links :where(a) {
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+/* Visible focus ring for keyboard users (applies regardless of widget state). */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-gold-400, #e6ba2b);
+  outline-offset: 2px;
+  border-radius: 3px;
+}

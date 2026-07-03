@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "siteTitle": "Madhya Pradesh Rajya Van Vikas Nigam (MPRVVN)",
+    "description": "Madhya Pradesh Rajya Van Vikas Nigam Limited is dedicated to sustainable forestry development, ecological conservation, and scientific plantation management across Madhya Pradesh."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "companyProfile": "Company Profile",
+    "visionMission": "Vision & Mission",
+    "objectives": "Objectives",
+    "board": "Board of Directors",
+    "orgStructure": "Organisation Structure",
+    "forestry": "Forestry",
+    "plantation": "Plantation",
+    "nursery": "Nursery",
+    "wildlife": "Wildlife Conservation",
+    "community": "Community",
+    "depositWorks": "Deposit Works",
+    "csr": "CSR",
+    "auctions": "Auctions",
+    "contact": "Contact"
+  },
+  "header": {
+    "orgName": "Madhya Pradesh Rajya Van Vikas Nigam Limited",
+    "shortName": "MPRVVN",
+    "tagline": "A Government of Madhya Pradesh Undertaking",
+    "govUndertaking": "Government of Madhya Pradesh Undertaking",
+    "locationLine": "Bhopal, M.P."
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "search": "Search",
+    "searchOpen": "Open search",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "close": "Close",
+    "language": "Language",
+    "changeLanguage": "Change language",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "backToHome": "Back to home",
+    "home": "Home",
+    "comingSoon": "Content coming soon",
+    "emptySection": "This section will be updated soon.",
+    "newBadge": "New"
+  },
+  "a11y": {
+    "title": "Accessibility Tools",
+    "buttonLabel": "Accessibility options",
+    "highContrast": "High Contrast",
+    "grayscale": "Grayscale",
+    "largeText": "Large Text",
+    "readableFont": "Readable Font",
+    "dyslexicFont": "Dyslexic Font",
+    "highlightLinks": "Highlight Links",
+    "underlineLinks": "Underline Links",
+    "resetAll": "Reset All"
+  },
+  "search": {
+    "placeholder": "Search pages, documents, services...",
+    "typeToSearch": "Type at least 2 characters to search",
+    "noResults": "No results found for \"{query}\"",
+    "resultsCount": "{count} result(s)",
+    "escToClose": "Press ESC to close",
+    "poweredBy": "MPRVVN Search",
+    "suggestions": "Suggestions"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "regions": "Regions",
+    "regionSuffix": "Region",
+    "headOffice": "Head Office",
+    "rights": "All rights reserved.",
+    "govOfMp": "Government of Madhya Pradesh",
+    "officialPortal": "Official Public Information Portal"
+  },
+  "home": {
+    "heroBadge": "Government of Madhya Pradesh Undertaking",
+    "ctaAbout": "About MPRVVN",
+    "ctaForestry": "Forestry Activities",
+    "quickLinksTitle": "Quick Links",
+    "statsTitle": "At a Glance",
+    "whatsNew": "What's New",
+    "tenders": "Tenders",
+    "careers": "Careers",
+    "employeeCorner": "Employee Corner",
+    "forestryTitle": "Our Forestry Work",
+    "executionTitle": "Execution Framework",
+    "executionSubtitle": "End-to-End Plantation Lifecycle Management",
+    "experienceTitle": "Demonstrated Experience",
+    "trustedTitle": "Trusted by Leading Institutions",
+    "faqTitle": "Frequently Asked Questions",
+    "aboutPreviewTitle": "About MPRVVN"
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "subtitle": "Pioneering Journey in Forestry Excellence"
+    },
+    "visionMission": {
+      "title": "Vision & Mission",
+      "visionHeading": "Vision Statement",
+      "missionHeading": "Mission of the Organization",
+      "missionGovernment": "Mission towards Government",
+      "missionConsumers": "Mission towards Consumers / Beneficiaries",
+      "missionEmployees": "Mission towards Employees"
+    },
+    "objectives": {
+      "title": "Objectives",
+      "subtitle": "Objectives of the Organization"
+    },
+    "board": {
+      "title": "Board of Directors",
+      "colSno": "S.No.",
+      "colName": "Name",
+      "colDesignation": "Designation"
+    },
+    "orgStructure": {
+      "title": "Organisation Structure",
+      "divisionalOffices": "Divisional Offices"
+    },
+    "forestry": {
+      "title": "Forestry Activities",
+      "subtitle": "Sustainable, scientific and climate-resilient forestry across Madhya Pradesh"
+    },
+    "plantation": {
+      "title": "Plantation Activities",
+      "phaseTitle": "Phase-Wise Plantation Expansion",
+      "colPhase": "Phase",
+      "colPeriod": "Period",
+      "colArea": "Approx. Plantation Area",
+      "speciesTitle": "Focus Species"
+    },
+    "nursery": {
+      "title": "Nursery",
+      "tableTitle": "Nursery Network",
+      "colSno": "S. No.",
+      "colDivision": "Division / Headquarters",
+      "colLocation": "Nursery Location",
+      "specializationTitle": "Our nurseries specialize in"
+    },
+    "wildlife": {
+      "title": "Wildlife Management & Biodiversity Conservation",
+      "corridorsTitle": "Key Wildlife Corridors",
+      "measuresTitle": "Conservation Measures"
+    },
+    "community": {
+      "title": "Community"
+    },
+    "depositWorks": {
+      "title": "Deposit Works",
+      "servicesTitle": "Our Services",
+      "executionTitle": "Execution Framework",
+      "executionSubtitle": "End-to-End Plantation Lifecycle Management",
+      "experienceTitle": "Experience",
+      "trustedTitle": "Trusted by Leading Institutions"
+    },
+    "csr": {
+      "title": "CSR Activities",
+      "initiativesTitle": "Key Initiatives",
+      "categoryEducation": "Education Support",
+      "categoryInfrastructure": "Community Infrastructure",
+      "categoryRenewable": "Renewable Energy",
+      "categorySkill": "Skill Development"
+    },
+    "auctions": {
+      "title": "Auctions",
+      "scheduleTitle": "Tentative Dates of Auctions",
+      "colSno": "S.No.",
+      "colDivision": "Project Division",
+      "colDepot": "Depot",
+      "colAuctionDepot": "Depot where Auction to be held",
+      "linksTitle": "Auction Notices",
+      "tenderTitle": "Tender",
+      "eauctionNote": "E-Auction can be enabled in future.",
+      "months": ["January", "February", "March", "April", "May"]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "directoryTitle": "Officers Directory",
+      "getInTouch": "Get in Touch",
+      "colOffice": "Name of Office",
+      "colName": "Name & Designation",
+      "colAddress": "Address",
+      "headOfficeGroup": "Head Office, Bhopal",
+      "bhopalGroup": "Regional Chief General Manager, Bhopal",
+      "jabalpurGroup": "Regional Chief General Manager, Jabalpur",
+      "timing": "Timing",
+      "address": "Address"
+    },
+    "accessibility": {
+      "title": "Accessibility Statement",
+      "subtitle": "Our commitment to an inclusive, accessible website"
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "body": "The page you are looking for does not exist or has moved.",
+      "cta": "Return to home"
+    }
+  }
+}

@@ -1,0 +1,508 @@
+// MPRVVN CMS — Prisma schema
+// All content domains are normalized and editable from the Admin panel.
+// Conventions: UUID primary keys, createdAt/updatedAt timestamps, and a
+// nullable deletedAt for soft-deletes on user-managed (CRUD) tables.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum MissionCategory {
+  GOVERNMENT
+  CONSUMERS
+  EMPLOYEES
+}
+
+enum OfficerRegion {
+  HEAD_OFFICE
+  BHOPAL
+  JABALPUR
+}
+
+enum CsrCategory {
+  EDUCATION
+  COMMUNITY_INFRASTRUCTURE
+  RENEWABLE_ENERGY
+  SKILL_DEVELOPMENT
+}
+
+enum NoticeCategory {
+  WHATS_NEW
+  TENDER
+  CAREER
+  EMPLOYEE_CORNER
+}
+
+// Supported content locales. English is the source-of-truth locale and lives
+// directly on each content row; other locales are overlaid from `Translation`.
+enum Locale {
+  en
+  hi
+}
+
+// ---------------------------------------------------------------------------
+// Authentication
+// ---------------------------------------------------------------------------
+
+model User {
+  id               String    @id @default(uuid())
+  email            String    @unique
+  name             String?
+  passwordHash     String
+  role             Role      @default(ADMIN)
+  // Brute-force protection: counts consecutive failed logins and locks the
+  // account until `lockedUntil` once a threshold is exceeded.
+  failedLoginCount Int       @default(0)
+  lockedUntil      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Generic editable prose sections (keyed by page + section)
+// Powers intros / narrative blocks across Home, About, Forestry, Community,
+// Deposit Works, Execution Framework, etc.
+// ---------------------------------------------------------------------------
+
+model PageSection {
+  id         String    @id @default(uuid())
+  pageKey    String // e.g. "home", "about", "community", "deposit-works"
+  sectionKey String // e.g. "about-preview", "vision", "intro"
+  heading    String?
+  subheading String?
+  body       String?   @db.Text
+  imageUrl   String?
+  order      Int       @default(0)
+  isVisible  Boolean   @default(true)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  @@unique([pageKey, sectionKey])
+  @@index([pageKey])
+}
+
+// Reusable statistics (home hero, experience, community, csr, ...)
+model Stat {
+  id        String    @id @default(uuid())
+  group     String // e.g. "home", "experience", "community", "csr"
+  label     String
+  value     String
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([group])
+}
+
+// ---------------------------------------------------------------------------
+// Homepage
+// ---------------------------------------------------------------------------
+
+model HomeHero {
+  id                String   @id @default(uuid())
+  badge             String?
+  heading           String
+  subheading        String?  @db.Text
+  primaryCtaLabel   String?
+  primaryCtaHref    String?
+  secondaryCtaLabel String?
+  secondaryCtaHref  String?
+  imageUrl          String?
+  isActive          Boolean  @default(true)
+  order             Int      @default(0)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// About — vision / mission / objectives / board / organisation structure
+// ---------------------------------------------------------------------------
+
+model Objective {
+  id        String    @id @default(uuid())
+  text      String    @db.Text
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model MissionPoint {
+  id        String          @id @default(uuid())
+  category  MissionCategory
+  text      String          @db.Text
+  order     Int             @default(0)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  deletedAt DateTime?
+
+  @@index([category])
+}
+
+model BoardMember {
+  id          String    @id @default(uuid())
+  name        String
+  designation String
+  photoUrl    String?
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+
+// Self-referential tree for the organisation structure chart
+model OrgNode {
+  id        String    @id @default(uuid())
+  title     String
+  subtitle  String?
+  parentId  String?
+  parent    OrgNode?  @relation("OrgTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children  OrgNode[] @relation("OrgTree")
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([parentId])
+}
+
+// ---------------------------------------------------------------------------
+// Forestry — plantation & nursery
+// ---------------------------------------------------------------------------
+
+model PlantationPhase {
+  id           String    @id @default(uuid())
+  phaseLabel   String // "Phase I–II"
+  period       String // "1976–1983"
+  areaHectares Int // 23739
+  order        Int       @default(0)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+}
+
+model Species {
+  id             String    @id @default(uuid())
+  name           String // "Teak"
+  scientificName String? // "Tectona grandis"
+  category       String? // "Plantation focus species"
+  note           String?
+  order          Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  deletedAt      DateTime?
+}
+
+model Nursery {
+  id        String    @id @default(uuid())
+  serialNo  Int?
+  division  String // "Chhindwara, Chhindwara" (Division / Headquarters)
+  location  String // "Lavagoghri"
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+model NurserySpecialization {
+  id        String    @id @default(uuid())
+  text      String // "Teak root-shoot"
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+// ---------------------------------------------------------------------------
+// Wildlife management & biodiversity conservation
+// ---------------------------------------------------------------------------
+
+model WildlifeCorridor {
+  id          String    @id @default(uuid())
+  name        String // "Kanha–Pench Corridor"
+  description String    @db.Text
+  area        String? // "75,181.593 hectares"
+  divisions   String? // "Lamta, Barghat, Mohgaon"
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+
+model ConservationMeasure {
+  id        String    @id @default(uuid())
+  text      String // "Waterhole development"
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+// ---------------------------------------------------------------------------
+// Community
+// ---------------------------------------------------------------------------
+
+model CommunityInitiative {
+  id          String    @id @default(uuid())
+  title       String
+  description String?   @db.Text
+  imageUrl    String?
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+
+// ---------------------------------------------------------------------------
+// Deposit works & execution framework
+// ---------------------------------------------------------------------------
+
+model DepositWorkService {
+  id          String    @id @default(uuid())
+  title       String // "Turnkey plantations for Environmental Clearance (EC) compliance"
+  description String?   @db.Text
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+
+model ExecutionStep {
+  id          String    @id @default(uuid())
+  title       String // "Site selection and survey"
+  description String?   @db.Text
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+
+model TrustedOrg {
+  id        String    @id @default(uuid())
+  name      String // "NTPC"
+  logoUrl   String?
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+// ---------------------------------------------------------------------------
+// CSR
+// ---------------------------------------------------------------------------
+
+model CsrInitiative {
+  id          String      @id @default(uuid())
+  category    CsrCategory
+  title       String
+  description String?     @db.Text
+  order       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  deletedAt   DateTime?
+
+  @@index([category])
+}
+
+// ---------------------------------------------------------------------------
+// Auctions
+// ---------------------------------------------------------------------------
+
+model AuctionScheduleRow {
+  id              String    @id @default(uuid())
+  serialNo        Int?
+  projectDivision String // "Rampur Bhatodi, Betul"
+  depot           String?
+  auctionDepot    String?
+  january         String?
+  february        String?
+  march           String?
+  april           String?
+  may             String?
+  year            String? // "2026"
+  order           Int       @default(0)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  deletedAt       DateTime?
+}
+
+model AuctionLink {
+  id        String    @id @default(uuid())
+  label     String // "Monthly Auction Advertisement"
+  url       String
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+}
+
+// ---------------------------------------------------------------------------
+// Contacts — officers directory
+// ---------------------------------------------------------------------------
+
+model Officer {
+  id          String        @id @default(uuid())
+  office      String // "Head Office, Bhopal"
+  name        String?
+  designation String?
+  address     String?       @db.Text
+  phone       String? // not in source document — editable, left empty
+  email       String?
+  region      OfficerRegion
+  order       Int           @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+
+  @@index([region])
+}
+
+// ---------------------------------------------------------------------------
+// Media library
+// ---------------------------------------------------------------------------
+
+model Media {
+  id        String    @id @default(uuid())
+  url       String
+  alt       String?
+  title     String?
+  mimeType  String?
+  width     Int?
+  height    Int?
+  sizeBytes Int?
+  folder    String?   @default("general")
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@index([folder])
+}
+
+// ---------------------------------------------------------------------------
+// Navigation & footer
+// ---------------------------------------------------------------------------
+
+model NavItem {
+  id         String    @id @default(uuid())
+  label      String
+  href       String
+  parentId   String?
+  parent     NavItem?  @relation("NavTree", fields: [parentId], references: [id], onDelete: Cascade)
+  children   NavItem[] @relation("NavTree")
+  order      Int       @default(0)
+  isExternal Boolean   @default(false)
+  isVisible  Boolean   @default(true)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  @@index([parentId])
+}
+
+model FooterLink {
+  id         String    @id @default(uuid())
+  groupTitle String // column heading, e.g. "Quick Links"
+  label      String
+  href       String
+  order      Int       @default(0)
+  isExternal Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  deletedAt  DateTime?
+
+  @@index([groupTitle])
+}
+
+// ---------------------------------------------------------------------------
+// SEO (per route) & global site settings
+// ---------------------------------------------------------------------------
+
+model SeoMeta {
+  id            String   @id @default(uuid())
+  pathKey       String   @unique // "/", "/about", "/forestry/plantation"
+  title         String?
+  description   String?  @db.Text
+  ogTitle       String?
+  ogDescription String?  @db.Text
+  ogImageUrl    String?
+  robots        String?  @default("index,follow")
+  canonicalUrl  String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model SiteSetting {
+  id              String   @id @default("singleton")
+  siteName        String
+  shortName       String
+  tagline         String?
+  cin             String?
+  established     String?
+  logoUrl         String?
+  faviconUrl      String?
+  addressLine     String?  @db.Text
+  officeHours     String?
+  contactEmail    String?
+  contactPhone    String?
+  gaMeasurementId String?
+  primaryColor    String?
+  eauctionEnabled Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Homepage notices portal (What's New / Tenders / Careers / Employee Corner)
+// ---------------------------------------------------------------------------
+
+model Notice {
+  id        String         @id @default(uuid())
+  category  NoticeCategory
+  text      String         @db.Text
+  href      String?
+  isNew     Boolean        @default(false)
+  isSample  Boolean        @default(false)
+  order     Int            @default(0)
+  isVisible Boolean        @default(true)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  deletedAt DateTime?
+
+  @@index([category])
+}
+
+// ---------------------------------------------------------------------------
+// Content translations (non-default locales). English is the source row; other
+// locales overlay these fields at render time, falling back to English.
+// ---------------------------------------------------------------------------
+
+model Translation {
+  id        String   @id @default(uuid())
+  locale    Locale
+  model     String
+  recordId  String
+  field     String
+  value     String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([locale, model, recordId, field])
+  @@index([model, recordId])
+}

@@ -1,0 +1,7 @@
+# Vulnerability disclosure policy for the MPRVVN portal.
+# https://securitytxt.org/  — update the contact and expiry before going live.
+
+Contact: mailto:security@mprvvn.example
+Preferred-Languages: en, hi
+Canonical: https://www.mprvvn.example/.well-known/security.txt
+Expires: 2027-06-30T00:00:00.000Z
