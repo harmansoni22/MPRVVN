@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/config";
 import { localizedRouteUrl, publicRoutes, routeAlternates } from "@/lib/routes";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mprvvn.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mprvvn.vercel.app/";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return publicRoutes.flatMap((route) =>
