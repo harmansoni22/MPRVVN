@@ -50,6 +50,16 @@ import {
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
+// This is a live-edited CMS: page content lives in Postgres and admins change it
+// from /admin, so every request must reflect the current database. Rendering these
+// routes dynamically (rather than prerendering at build) also means `next build`
+// does not need a reachable database — the missing piece that was hanging the Vercel
+// build at "Generating static pages (0/39)". `force-dynamic` on this leaf page opts
+// the whole [lang] tree (including its layouts' data fetching) out of prerendering.
+// If CDN caching is wanted later, swap this for `revalidate` + on-demand
+// revalidatePath() from the admin mutations instead.
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ lang: string; slug?: string[] }>;
 };
