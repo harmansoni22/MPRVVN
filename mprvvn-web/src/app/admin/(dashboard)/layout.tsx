@@ -5,6 +5,12 @@ import { logout } from "@/lib/admin/actions";
 import { resourceGroups } from "@/lib/admin/resources";
 import { AdminSidebar, AdminMobileNav } from "@/components/admin/admin-sidebar";
 
+// The admin dashboard is session-gated (requireAdmin) and reads live counts from
+// Postgres, so it is always request-time rendered. Declaring it here stops Next
+// from probing these routes during the build's static-generation pass — which is
+// what was emitting `prisma.*.count()` "DATABASE_URL not found" errors at build.
+export const dynamic = "force-dynamic";
+
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const user = await requireAdmin();
 
