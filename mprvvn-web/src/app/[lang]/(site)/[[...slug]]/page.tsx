@@ -48,7 +48,7 @@ import {
   type PublicRoute,
 } from "@/lib/routes";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mprvvn.vercel.app";
 
 // This is a live-edited CMS: page content lives in Postgres and admins change it
 // from /admin, so every request must reflect the current database. Rendering these

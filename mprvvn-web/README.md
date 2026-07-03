@@ -41,7 +41,7 @@ npm install                 # also runs `prisma generate`
 npx prisma migrate dev      # apply migrations to your dev DB
 npm run db:seed             # ONE-TIME: load PDF content (⚠ wipes existing rows)
 npm run create-admin        # create/rotate the admin (reads ADMIN_EMAIL/PASSWORD)
-npm run dev                 # http://localhost:3000  → redirects to /en
+npm run dev                 # https://mprvvn.vercel.app  → redirects to /en
 ```
 
 Admin panel: `/admin` (sign in at `/admin/login`).

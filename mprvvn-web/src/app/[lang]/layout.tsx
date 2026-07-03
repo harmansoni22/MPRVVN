@@ -12,7 +12,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mprvvn.vercel.app";
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
